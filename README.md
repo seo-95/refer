@@ -1,3 +1,6 @@
+##Forked version
+This version includes bug fixing, requirements updated and a more flexible interface for the API. REFER now requires to explicitly insert the image and annotations folders without following the previous defined folders hierarchy.
+
 ## Note
 This API is able to load all 4 referring expression datasets, i.e., RefClef, RefCOCO, RefCOCO+ and RefCOCOg. 
 They are with different train/val/test split by UNC, Google and UC Berkeley respectively. We provide all kinds of splits here.
