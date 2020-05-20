@@ -1,3 +1,5 @@
+#### ** ALERT: this hierarchy is no more needed with this version **
+
 This directory should contain the following data:
 ```
 $DATA_PATH
