@@ -1,4 +1,4 @@
-##Forked version
+## Forked version
 This version includes bug fixing, requirements updated and a more flexible interface for the API. REFER now requires to explicitly insert the image and annotations folders without following the previous defined folders hierarchy.
 
 ## Note
