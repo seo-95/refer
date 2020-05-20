@@ -1,5 +1,8 @@
-# images
-data/images
+#vscode folder
+.vscode
+
+#venvs
+Pipfile
 
 # 4 datasets
 data/refclef

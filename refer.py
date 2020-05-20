@@ -24,6 +24,7 @@ getMask    - get mask and area of the referred object given ref
 showMask   - show mask of the referred object given ref
 """
 
+import pdb
 import sys
 import os.path as osp
 import json
@@ -43,12 +44,13 @@ from .external import mask
 
 class REFER():
 
-    def __init__(self, data_root, dataset='refcoco', splitBy='unc'):
+    def __init__(self, imgDir, instancesDir, dataset='refcoco', splitBy='unc'):
         # provide data_root folder which contains refclef, refcoco, refcoco+
         # and refcocog
         # also provide dataset name and splitBy information
         # e.g., dataset = 'refcoco', splitBy = 'unc'
         print('loading dataset %s into memory...' % dataset)
+        """OLD CODE
         self.ROOT_DIR = osp.abspath(osp.dirname(__file__))
         self.DATA_DIR = osp.join(data_root, dataset)
         if dataset in ['refcoco', 'refcoco+', 'refcocog']:
@@ -60,7 +62,9 @@ class REFER():
         else:
             print('No refer dataset is called [%s]' % dataset)
             sys.exit()
-
+        """
+        self.IMAGE_DIR = imgDir
+        self.DATA_DIR = instancesDir
         # load refs from data/dataset/refs(dataset).json
         tic = time.time()
         ref_file = osp.join(self.DATA_DIR, 'refs('+splitBy+').p')
@@ -242,6 +246,14 @@ class REFER():
         return ann['bbox']  # [x, y, w, h]
 
     def showRef(self, ref, seg_box='seg'):
+        """It shows the segmentation or bbox of the reference ref
+
+        Arguments:
+            ref {dict} -- The reference dict
+
+        Keyword Arguments:
+            seg_box {str} -- 'seg' or 'box' (default: {'seg'})
+        """
         ax = plt.gca()
         # show image
         image = self.Imgs[ref['image_id']]
@@ -305,11 +317,12 @@ class REFER():
         return {'mask': m, 'area': area}
 
     def showMask(self, ref):
+        pdb.set_trace()
         M = self.getMask(ref)
         msk = M['mask']
         ax = plt.gca()
         ax.imshow(msk)
-        ax.show()
+        #ax.show()
 
 """
 if __name__ == '__main__':
