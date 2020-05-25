@@ -1,5 +1,5 @@
 ## Forked version
-This version includes bug fixing, requirements updated and a more flexible interface for the API. REFER now requires to explicitly insert the image and annotations folders without following the previous defined folders hierarchy.
+This version includes bug fixing, requirements updated and a more flexible interface for the API. REFER now requires to explicitly insert the images and annotations folders without following the previous defined folders hierarchy.
 
 ## Note
 This API is able to load all 4 referring expression datasets, i.e., RefClef, RefCOCO, RefCOCO+ and RefCOCOg. 
